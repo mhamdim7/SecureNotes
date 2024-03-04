@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SecureNotes</string>
+    <string name="title">Title</string>
+    <string name="delete_note">Delete note</string>
+    <string name="color">Color</string>
+    <string name="date">Date</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="add_note">Add Note</string>
+    <string name="your_notes_list_is_empty">Your notes list is empty.\nStart Adding by clicking on the + button.</string>
+    <string name="your_notes">Your Notes</string>
+    <string name="sort">Sort</string>
+    <string name="note_deleted">Note Deleted</string>
+    <string name="undo">Undo</string>
+    <string name="enter_title">Enter Title…</string>
+    <string name="enter_some_content">Enter Some Content…</string>
+    <string name="notecolor">noteColor</string>
+    <string name="noteid">noteId</string>
+    <string name="note_saved">Note saved</string>
+    <string name="couldn_t_save_the_note">Couldn\'t save the note</string>
+</resources>
