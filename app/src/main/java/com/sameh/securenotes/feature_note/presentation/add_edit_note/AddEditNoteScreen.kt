@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -38,9 +37,6 @@ import com.sameh.securenotes.ui.theme.dimens
 import kotlinx.coroutines.flow.collectLatest
 
 
-private const val animationDuration = 500
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddEditNoteScreen(
     viewModel: AddEditNoteViewModel = hiltViewModel()
@@ -53,15 +49,15 @@ fun AddEditNoteScreen(
         animationSpec = tween(durationMillis = 500), label = ""
     )
 
-    val snackbarState = remember { SnackbarHostState() }
+    val snackBarState = remember { SnackbarHostState() }
 
-    Scaffold(snackbarHost = { SnackbarHost(hostState = snackbarState, modifier = Modifier) }
+    Scaffold(snackbarHost = { SnackbarHost(hostState = snackBarState, modifier = Modifier) }
     ) { paddingValues ->
         LaunchedEffect(key1 = Unit) {
             viewModel.eventFlow.collectLatest {
                 when (it) {
-                    is UiEvent.ShowSnackbar -> {
-                        snackbarState.showSnackbar(it.message)
+                    is UiEvent.ShowSnackBar -> {
+                        snackBarState.showSnackbar(it.message)
                     }
                 }
             }

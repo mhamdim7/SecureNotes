@@ -38,13 +38,19 @@ fun ColorChooser(
             val isChosenColor = viewModel.noteColor.value == color.toArgb()
 
             val sizeState = if (isChosenColor) 47.dp else 50.dp
-            val size = animateDpAsState(targetValue = sizeState, animationSpec = tween(durationMillis = 500))
+            val size = animateDpAsState(targetValue = sizeState, animationSpec = tween(durationMillis = 500),
+                label = ""
+            )
 
             val borderWidthState = if (isChosenColor) 3.dp else 0.dp
-            val borderWidth = animateDpAsState(targetValue = borderWidthState, animationSpec = tween(durationMillis = 500))
+            val borderWidth = animateDpAsState(targetValue = borderWidthState, animationSpec = tween(durationMillis = 500),
+                label = ""
+            )
 
             val borderColorState = if (isChosenColor) Color.Black else Color.Transparent
-            val borderColor = animateColorAsState(targetValue = borderColorState, animationSpec = tween(durationMillis = 500))
+            val borderColor = animateColorAsState(targetValue = borderColorState, animationSpec = tween(durationMillis = 500),
+                label = ""
+            )
 
             Box(
                 modifier = Modifier

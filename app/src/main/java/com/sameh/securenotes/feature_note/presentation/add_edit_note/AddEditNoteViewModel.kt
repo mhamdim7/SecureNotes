@@ -38,8 +38,9 @@ class AddEditNoteViewModel @Inject constructor(
     val noteContent: State<NoteTextFieldState> = _noteContent
 
     private val _noteColor = mutableIntStateOf(
-        savedStateHandle.get<Int>(resources.getString(R.string.notecolor))
-            ?: Note.noteColors.random().toArgb()
+        savedStateHandle.get<Int>(resources.getString(R.string.notecolor)).let {
+            if (it == null || it == -1) Note.noteColors.random().toArgb() else it
+        }
     )
     val noteColor: State<Int> = _noteColor
 
@@ -91,10 +92,11 @@ class AddEditNoteViewModel @Inject constructor(
                     id = currentNoteId
                 )
             )
-            _eventFlow.emit(UiEvent.ShowSnackbar(resources.getString(R.string.note_saved)))
+
+            _eventFlow.emit(UiEvent.ShowSnackBar(resources.getString(R.string.note_saved)))
         }.onFailure {
             _eventFlow.emit(
-                UiEvent.ShowSnackbar(
+                UiEvent.ShowSnackBar(
                     it.message ?: resources.getString(R.string.couldn_t_save_the_note)
                 )
             )
