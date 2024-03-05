@@ -15,7 +15,7 @@
         tools:ignore="DiscouragedApi"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".adapter.ui.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SecureNotes"

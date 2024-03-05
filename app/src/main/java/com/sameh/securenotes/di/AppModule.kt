@@ -1,20 +1,19 @@
 package com.sameh.securenotes.di
 
 import android.app.Application
-import com.sameh.securenotes.feature_note.data.database.DatabaseHelper
-import com.sameh.securenotes.feature_note.data.database.NoteDao
-import com.sameh.securenotes.feature_note.data.database.NoteDatabase
-import com.sameh.securenotes.feature_note.data.repository.NoteRepositoryImpl
-import com.sameh.securenotes.feature_note.data.sources.framework.AndroidResourceProvider
-import com.sameh.securenotes.feature_note.data.sources.local.LocalDataSource
-import com.sameh.securenotes.feature_note.domain.mapper.NoteEntityMapper
-import com.sameh.securenotes.feature_note.domain.repository.NoteRepository
-import com.sameh.securenotes.feature_note.domain.usecases.AddNote
-import com.sameh.securenotes.feature_note.domain.usecases.DeleteNote
-import com.sameh.securenotes.feature_note.domain.usecases.GetNote
-import com.sameh.securenotes.feature_note.domain.usecases.GetNotes
-import com.sameh.securenotes.feature_note.domain.usecases.NoteUseCases
-import com.sameh.securenotes.feature_note.presentation.mapper.NoteUiModelMapper
+import com.sameh.securenotes.adapter.framework.AndroidResourceProvider
+import com.sameh.securenotes.adapter.mapper.DomainUiMapper
+import com.sameh.securenotes.adapter.mapper.EntityDomainMapper
+import com.sameh.securenotes.adapter.persistence.DatabaseHelper
+import com.sameh.securenotes.adapter.persistence.NoteDao
+import com.sameh.securenotes.adapter.persistence.NoteDatabase
+import com.sameh.securenotes.adapter.persistence.RoomNoteRepository
+import com.sameh.securenotes.application.port.inbound.AddNote
+import com.sameh.securenotes.application.port.inbound.DeleteNote
+import com.sameh.securenotes.application.port.inbound.GetNote
+import com.sameh.securenotes.application.port.inbound.GetNotes
+import com.sameh.securenotes.application.port.inbound.NoteUseCases
+import com.sameh.securenotes.domain.repository.NoteRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -39,29 +38,23 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideLocalDataSource(noteDao: NoteDao): LocalDataSource {
-        return LocalDataSource(noteDao)
+    fun provideNoteUiModelMapper(): DomainUiMapper {
+        return DomainUiMapper()
     }
 
     @Provides
     @Singleton
-    fun provideNoteUiModelMapper(): NoteUiModelMapper {
-        return NoteUiModelMapper()
-    }
-
-    @Provides
-    @Singleton
-    fun provideNoteEntityMapper(): NoteEntityMapper {
-        return NoteEntityMapper()
+    fun provideNoteEntityMapper(): EntityDomainMapper {
+        return EntityDomainMapper()
     }
 
     @Provides
     @Singleton
     fun provideNoteRepository(
-        localDataSource: LocalDataSource,
-        noteEntityMapper: NoteEntityMapper
+        noteDao: NoteDao,
+        entityDomainMapper: EntityDomainMapper
     ): NoteRepository {
-        return NoteRepositoryImpl(localDataSource, noteEntityMapper)
+        return RoomNoteRepository(noteDao, entityDomainMapper)
     }
 
     @Provides
