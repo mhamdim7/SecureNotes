@@ -1,6 +1,6 @@
 # SecureNotes: Encrypted Note-Taking App
 
-### Hexagonal Architecture Branch
+### 📢 Hexagonal Architecture Branch ⚠️  
 
 Embracing Hexagonal Architecture, SecureNotes is an Android app that prioritizes security and modern development practices, utilizing Jetpack Compose, Room, Hilt, MVVM, and Navigation Components to deliver a seamless note-taking experience.
 
@@ -9,19 +9,24 @@ Embracing Hexagonal Architecture, SecureNotes is an Android app that prioritizes
 - **Jetpack Compose**: Simplifies UI development with a modern, declarative approach.
 - **Room Database**: Provides robust local data storage solutions, enhanced with encrypted capabilities for security.
 - **Hilt**: Facilitates dependency injection, streamlining the setup and scalability of the application architecture.
-- **MVVM**: Guides the presentation layer, ensuring clean separation between the UI and business logic.
+- **MVVM**: Guides the presentation layer, facilitating a clear separation of concerns and a reactive data flow.
 - **Navigation Components**: Manages UI navigation, offering a flexible and intuitive handling of app flows.
 
 ## Features
 
-- **Secure Storage**: Integrates SQLCipher with EncryptedSharedPreferences for top-tier data encryption.
-- **Keystore Integration**: Leverages the Android Keystore System for secure key management.
-- **Intuitive UI for Notes**: Allows users to easily add, modify, and categorize notes with custom colors.
-- **Jetpack Compose UI**: Ensures a responsive and aesthetically pleasing user interface.
+- **Encrypted Storage**: Uses SQLCipher and EncryptedSharedPreferences for secure data storage.
+- **Android Keystore**: Employs the Android Keystore System for enhanced cryptographic key management.
+- **Note Management**: Features adding, editing, and deleting notes, supported by an intuitive Compose-based UI.
+- **Color-coded Notes**: Enhances note organization with dynamic color coding, sorting and more.
+
+## ToDo
+
+- **Add password protected lockscreen**
+- **Add possibility to use Biometrics**
 
 ## Architecture Overview
 
-SecureNotes is built on Hexagonal Architecture, organized into:
+SecureNotes is built on Hexagonal Architecture, mainly organized into:
 
 - **Domain Layer**: Defines core business logic and models, establishing the application's fundamental operations.
 - **Application Layer**: Contains the use cases that dictate the application's functionality, bridging the domain with the outer world.
