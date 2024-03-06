@@ -2,7 +2,7 @@
 
 ### 📢 Clean Architecture Branch ⚠️
 
-SecureNotes is an Android note-taking app, embodying privacy, security, and modern Android development practices. This branch showcases an implementation based on Clean Architecture principles, enhanced with Jetpack Compose, Room, Hilt, and Navigation Components to create a robust, maintainable, and user-friendly application.
+SecureNotes is an Android note-taking app, embodying privacy, security, and modern Android development practices. This branch showcases an implementation based on Clean Architecture principles, enhanced with Jetpack Compose, Room, Hilt, and Navigation Component to create a robust, maintainable, and user-friendly application.
 
 ## Key Technologies & Patterns
 
@@ -10,7 +10,7 @@ SecureNotes is an Android note-taking app, embodying privacy, security, and mode
 - **Room Database**: Provides robust local data storage solutions, enhanced with encrypted capabilities for security.
 - **Hilt**: Facilitates dependency injection, streamlining the setup and scalability of the application architecture.
 - **MVVM**: Guides the presentation layer, facilitating a clear separation of concerns and a reactive data flow.
-- **Navigation Components**: Manages UI navigation, offering a flexible and intuitive handling of app flows.
+- **Navigation Component**: Manages UI navigation, offering a flexible and intuitive handling of app flows.
 
 ## Features
 
