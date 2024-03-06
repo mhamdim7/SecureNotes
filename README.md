@@ -40,4 +40,4 @@ SecureNotes is built on Hexagonal Architecture, mainly organized into:
 
 ## Contribution
 
-Your input helps make SecureNotes better. Please feel free to suggest improvements, report bugs, or contribute directly through pull requests.
+Contributions to SecureNotes are warmly welcomed. Feel free to report issues, suggest features, or open pull requests.
