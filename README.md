@@ -2,7 +2,7 @@
 
 ### 📢 Hexagonal Architecture Branch ⚠️  
 
-Embracing Hexagonal Architecture, SecureNotes is an Android app that prioritizes security and modern development practices, utilizing Jetpack Compose, Room, Hilt, MVVM, and Navigation Components to deliver a seamless note-taking experience.
+Embracing Hexagonal Architecture, SecureNotes is an Android app that prioritizes security and modern development practices, utilizing Jetpack Compose, Room, Hilt, MVVM, and Navigation Component to deliver a seamless note-taking experience.
 
 ## Key Technologies & Patterns
 
@@ -10,7 +10,7 @@ Embracing Hexagonal Architecture, SecureNotes is an Android app that prioritizes
 - **Room Database**: Provides robust local data storage solutions, enhanced with encrypted capabilities for security.
 - **Hilt**: Facilitates dependency injection, streamlining the setup and scalability of the application architecture.
 - **MVVM**: Guides the presentation layer, facilitating a clear separation of concerns and a reactive data flow.
-- **Navigation Components**: Manages UI navigation, offering a flexible and intuitive handling of app flows.
+- **Navigation Component**: Manages UI navigation, offering a flexible and intuitive handling of app flows.
 
 ## Features
 
